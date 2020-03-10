@@ -1,6 +1,8 @@
 <h1>論文一覧</h1>
 <ul>
-  <li><a href="/articles/<%= @articles[0].id %>"><%= @articles[0].title %></a></li>
-  <li><a href="/articles/<%= @articles[1].id %>"><%= @articles[1].title %></a></li>
-  <li><a href="/articles/<%= @articles[2].id %>"><%= @articles[2].title %></a></li>
+  <% @articles.each do |article| %>
+    <li><%= link_to article.title, article  %></li>
+  <% end %>
 </ul>
+
+<%= link_to "投稿する", new_article_path %>
