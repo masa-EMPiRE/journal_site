@@ -17,7 +17,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     @article.save
-    redirect_to @article
+    redirect_to action: :index
   end
 
   def edit
